@@ -265,19 +265,14 @@ declare namespace Uno.UI {
         * Set a single CSS style of a html element
         *
         */
-		setStyleDoubleNative(pParams: number): boolean;
+    setStyleDoubleNative(pParams: number): boolean;
+    setArrangeProperties(elementId: number, clipToBounds: boolean): string;
         /**
-            * Set the CSS style of a html element.
-            *
-            * To remove a value, set it to empty string.
-            * @param styles A dictionary of styles to apply on html element.
+            * Remove the CSS style of a html element.
             */
 		resetStyle(elementId: number, names: string[]): string;
         /**
-            * Set the CSS style of a html element.
-            *
-            * To remove a value, set it to empty string.
-            * @param styles A dictionary of styles to apply on html element.
+            * Remove the CSS style of a html element.
             */
 		resetStyleNative(pParams: number): boolean;
 		private resetStyleInternal;
@@ -526,6 +521,7 @@ declare namespace Uno.UI {
 		private resize;
 		private dispatchEvent;
 		private getIsConnectedToRootElement;
+    setCursor(cssCursor: string): string;
 	}
 }
 declare class StorageFolderMakePersistentParams {
@@ -692,12 +688,10 @@ declare class WindowManagerSetStyleDoubleParams {
 	static unmarshal(pData: number): WindowManagerSetStyleDoubleParams;
 }
 declare class WindowManagerSetStylesParams {
-	HtmlId: number;
-	SetAsArranged: boolean;
-	Pairs_Length: number;
-	Pairs: Array<string>;
-	ClipToBounds: boolean;
-	static unmarshal(pData: number): WindowManagerSetStylesParams;
+  HtmlId: number;
+  Pairs_Length: number;
+  Pairs: Array<string>;
+  static unmarshal(pData: number): WindowManagerSetStylesParams;
 }
 declare class WindowManagerSetXUidParams {
 	HtmlId: number;
@@ -889,6 +883,11 @@ declare namespace Windows.UI.Core {
 		disable(): void;
 		private clearStack;
 	}
+}
+declare namespace Windows.UI.ViewManagement {
+    class ApplicationViewTitleBar {
+        static setBackgroundColor(colorString: string): void;
+    }
 }
 declare namespace Windows.UI.Xaml {
 	class Application {

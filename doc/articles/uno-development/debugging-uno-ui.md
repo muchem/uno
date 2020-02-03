@@ -9,7 +9,7 @@ Prerequisites:
     - `ASP.NET and Web Development`
     - `.NET Core cross-platform development`
     - `UWP Development`, install all recent UWP SDKs, starting from 10.0.14393 (or above or equal to `TargetPlatformVersion` line [in this file](/src/Uno.CrossTargetting.props))
-- Install (**Tools** / **Android** / **Android SDK manager**) all Android SDKs starting from 7.1 (or the Android versions `TargetFrameworks` [list used here](/src/Uno.UI.BindingHelper.Android/Uno.UI.BindingHelper.Android.csproj))
+- Install (**Tools** / **Android** / **Android SDK manager**) all Android SDKs starting from 7.1 (or the Android versions `TargetFrameworks` [list used here](https://github.com/unoplatform/uno/blob/master/src/Uno.UI.BindingHelper.Android/Uno.UI.BindingHelper.Android.csproj))
 
 ### Building Uno.UI for all available targets
 * Open the [Uno.UI.sln](/src/Uno.UI.sln)
@@ -73,11 +73,7 @@ Refer to the [guidelines for breaking changes](../contributing/guidelines/breaki
 
 ## Building Uno.UI for macOS using Visual Studio for Mac
 
-Building Uno.UI for the macOS platform using vs4mac requires Visual Studio for mac 8.1 Preview or later.
-
-To build and run:
-- In a shell in the `src/Uno.UI` folder, run `msbuild /r Uno.UI-vs4mac.sln`. This will make the nuget restore work properly.
-- Once done, in VS4Mac, run the `SampleApp.macOS` project, which will build the dependencies and the app itself.
+See [instructions here](building-uno-macos.md) for building Uno.UI for the macOS platform.
 
 ## Troubleshooting Source Generation
 
